@@ -1,0 +1,3 @@
+[submodule "services/petni-app-submodule"]
+	path = services/petni-app-submodule
+	url = git@github.com:achinchen/petni-app.git
