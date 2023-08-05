@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:achinchen/petni-app.git
+	branch = main
+	commit = 95088f30c47955583c24c59906e0d35a05ee67ce
+	parent = 92befc1713bae95ddbc617928e06d0629209b9b2
+	method = merge
+	cmdver = 0.4.6

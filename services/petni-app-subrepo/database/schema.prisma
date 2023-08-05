@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement()) @unique
+  name     String
+  imageUrl String
+  email    String   @unique
+  Animal   Animal[]
+}
+
+model AnimalFollow {
+  id        Int      @id @default(autoincrement())
+  animalId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  count     Int      @default(1)
+  animal    Animal   @relation(fields: [animalId], references: [id])
+}
+
+model Animal {
+  id        Int            @id @default(autoincrement()) @unique
+  code      String?        @default("")
+  size      Size
+  color     String
+  family    Family        
+  gender    Gender
+  imageUrl  String
+  location  String
+  address   String
+  tel       String
+  note      String
+  name      String?        @default("")
+  openAt    DateTime?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  userId    Int?           @default(0)
+  user      User?          @relation(fields: [userId], references: [id])
+  follows   AnimalFollow[]
+  
+  @@index([family, gender, size], type: Hash)
+}
+
+enum Gender {
+  Female
+  Male
+  Null
+}
+
+enum Family {
+  Cat
+  Dog
+}
+
+enum Size {
+  Small
+  Medium
+  Large
+}
