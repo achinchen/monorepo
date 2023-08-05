@@ -1,0 +1,33 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+  width: 100%;
+}
+
+menu, figure {
+  margin: 0;
+}
